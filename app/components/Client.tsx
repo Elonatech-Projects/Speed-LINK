@@ -21,27 +21,29 @@ const Client = () => {
 
   return (
     <div className="bg-[#e6e8ef]">
-      <div className="py-25 xl:mx-85  ">
-        <h4 className="font-semibold text-[32px] text-[#404297]">
-          Our Clients
-        </h4>
+      <div className=" py-25 2xl:mx-71 xl:px-15 px-5  ">
+        <div className="container">
+          <h4 className="font-semibold text-[32px] text-[#404297]">
+            Our Clients
+          </h4>
 
-        <hr className="border text-[#aeb8fe] mb-5 mt-3 " />
+          <hr className="border text-[#aeb8fe] mb-5 mt-3 " />
 
-        <div className="overflow-hidden">
-          <div className="flex  gap-5 items-center animate-marquee">
-            {[...clients, ...clients].map((client, index) => (
-              <div
-                key={index}
-                className=" bg-white rounded-lg p-4 flex items-center justify-center"
-              >
-                <Image
-                  src={client}
-                  alt={`Client ${index + 1}`}
-                  className="w-55"
-                />
-              </div>
-            ))}
+          <div className="overflow-hidden">
+            <div className="flex  gap-5 items-center animate-marquee">
+              {[...clients, ...clients].map((client, index) => (
+                <div
+                  key={index}
+                  className=" bg-white rounded-lg p-4 flex items-center justify-center"
+                >
+                  <Image
+                    src={client}
+                    alt={`Client ${index + 1}`}
+                    className="w-55"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

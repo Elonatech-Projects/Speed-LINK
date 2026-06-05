@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --max-width: 1800px;
 }
 
 /* @theme inline {
@@ -11,6 +12,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 } */
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,8 +25,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
 
 .hero {
   background-image: url("../public/images/Hallo-in-sky-background.png");
@@ -41,7 +53,8 @@ body {
 @media screen and (min-width: 768px) {
   .hero {
     min-height: 65vh;
-    background-position: center;
+    background-position: top center;
+
   }
 }
 
@@ -52,6 +65,9 @@ body {
 
   }
 }
+
+
+
 
 /* .hero {
   background-image: url("../public/images/Hallo-in-sky-background.png");
