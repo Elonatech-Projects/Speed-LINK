@@ -14,55 +14,57 @@ const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed bg-white px-5 md:py-3 py-4.5 sm:px-5 md:px-10 xl:px-15 2xl:px-85 w-full z-50">
-      <div className="container flex items-center justify-between">
-        <Image
-          src={logo}
-          alt="Logo"
-          className="xl:w-36 xl:h-[59.83px] w-35 h-14.5"
-        />
+    <>
+      <div className="fixed bg-white px-5 md:py-3 py-4.5 sm:px-5 md:px-10 xl:px-15 2xl:px-85 w-full z-50">
+        <div className="container flex items-center justify-between">
+          <Image
+            src={logo}
+            alt="Logo"
+            className="xl:w-36 xl:h-[59.83px] w-35 h-14.5"
+          />
 
-        <div className="text-[#707070] text-[15px] font-normal xl:flex gap-8 hidden">
-          <Link href="/" className="hover:text-[#ee3539]">
-            About
-          </Link>
-          <div className="group flex items-center gap-1 hover:text-[#ee3539]">
-            <Link href="/">Products</Link>
-            <FaAngleDown />
-            <ProductHover />
+          <div className="text-[#707070] text-[15px] font-normal xl:flex gap-8 hidden">
+            <Link href="/" className="hover:text-[#ee3539]">
+              About
+            </Link>
+            <div className="group flex items-center gap-1 hover:text-[#ee3539]">
+              <Link href="/">Products</Link>
+              <FaAngleDown />
+              <ProductHover />
+            </div>
+            <div className="flex items-center gap-1 group hover:text-[#ee3539]">
+              <Link href="/">Services</Link>
+              <FaAngleDown />
+              <ServiceHover />
+            </div>
+            <Link href="/" className="hover:text-[#ee3539]">
+              Case Studies
+            </Link>
+            <Link href="/" className="hover:text-[#ee3539]">
+              Insights
+            </Link>
           </div>
-          <div className="flex items-center gap-1 group hover:text-[#ee3539]">
-            <Link href="/">Services</Link>
-            <FaAngleDown />
-            <ServiceHover />
+
+          <div
+            className="xl:hidden block text-[#47489b] text-[24px] font-extrabold cursor-pointer"
+            onClick={() => setMenuOpen(true)}
+          >
+            <GiHamburgerMenu />
           </div>
-          <Link href="/" className="hover:text-[#ee3539]">
-            Case Studies
-          </Link>
-          <Link href="/" className="hover:text-[#ee3539]">
-            Insights
-          </Link>
-        </div>
 
-        <div
-          className="xl:hidden block text-[#47489b] text-[24px] font-extrabold cursor-pointer"
-          onClick={() => setMenuOpen(true)}
-        >
-          <GiHamburgerMenu />
+          <button className="bg-linear-to-r from-[#46489e] to-[#6870d0] text-white rounded-full md:px-8 px-5 py-3.75 text-[14.4px] md:text-[16px]">
+            Book a Call
+          </button>
         </div>
-
-        <button className="bg-linear-to-r from-[#46489e] to-[#6870d0] text-white rounded-full md:px-8 px-5 py-3.75 text-[14.4px] md:text-[16px]">
-          Book a Call
-        </button>
       </div>
 
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 left-0 h-full md:w-[600px] w-[300px] bg-white shadow-2xl z-[60] transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex justify-between items-center p-5 border-b">
-          <Image src={logo} alt="Logo" className="w-28 h-10" />
+          <Image src={logo} alt="Logo" className="w-40 h-14" />
           <IoClose
             className="text-2xl text-[#47489b] cursor-pointer"
             onClick={() => setMenuOpen(false)}
@@ -79,11 +81,11 @@ const NavBar = () => {
           </Link>
 
           <button className="bg-[#f5f5f5] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
-            Products <FaAngleDown />
+            Products <span className="text-[12px]">&#9654;</span>
           </button>
 
           <button className="bg-[#f5f5f5] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
-            Services <FaAngleDown />
+            Services <span className="text-[12px]">&#9654;</span>
           </button>
 
           <Link
@@ -110,11 +112,11 @@ const NavBar = () => {
 
       {menuOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-40"
+          className="fixed inset-0 bg-black/40 z-[55]"
           onClick={() => setMenuOpen(false)}
         />
       )}
-    </div>
+    </>
   );
 };
 

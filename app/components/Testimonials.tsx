@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   MdOutlineArrowBackIos,
   MdOutlineArrowForwardIos,
@@ -19,6 +20,12 @@ const testimonials = [
   },
 ];
 
+const slideVariants = {
+  enter: { x: 100, opacity: 0 },
+  center: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
+  exit: { x: -100, opacity: 0, transition: { duration: 0.4, ease: "easeIn" } },
+};
+
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
 
@@ -27,69 +34,105 @@ const Testimonials = () => {
   const next = () =>
     setCurrent((i) => (i === testimonials.length - 1 ? 0 : i + 1));
 
+  useEffect(() => {
+    const timer = setInterval(next, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="bg-[#404297]">
       <div className="container py-16 xl:py-20 px-5 xl:px-15 2xl:mx-71">
-        <h5 className="font-semibold text-[32px] text-white text-center mb-10">
+        <h5 className="font-semibold text-[32px] text-white text-center mb-25">
           Testimonials
         </h5>
 
-        <div className="hidden md:flex items-center justify-center gap-4">
+        <div className="relative hidden md:flex items-center justify-center gap-4">
           <button
             onClick={prev}
-            className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center shrink-0 transition-colors"
+            className="bg-[#ee3539] absolute  2xl:left-135 left-29 lg:left-75 bottom-20 z-10 hover:bg-[#c0392b] w-7 h-7 flex items-center justify-center shrink-0 transition-colors"
           >
             <MdOutlineArrowBackIos className="text-white text-[16px]" />
           </button>
 
-          <div className="relative bg-white rounded-xl p-6 md:py-7.5 md:pr-7.5 md:pl-17.5 max-w-173.5 w-full flex gap-5 items-start">
-            <div className="space-y-2">
-              <h6 className="font-bold text-[#404297] text-[18px]">
-                {testimonials[current].name}
-              </h6>
-              <p className="text-[14px] md:text-[16px] text-[#707070] leading-6">
-                {testimonials[current].text}
-              </p>
-            </div>
+          <div className="relative bg-white rounded-md py-7.5 pr-7.5 pl-17.5 max-w-173.5 w-full overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="flex gap-5 items-center"
+              >
+                <div className="absolute xl:left-75 2xl:-left-10  bottom-40 left-30 shrink-0 w-32 h-24 rounded overflow-hidden bg-red-200 z-999">
+                  {/* <Image
+                    src={profile}
+                    alt="profile"
+                    className="w-full h-full object-cover"
+                  /> */}
+                </div>
+                <div className="space-y-2">
+                  <h6 className="font-semibold text-[#404297] text-[18px]">
+                    {testimonials[current].name}
+                  </h6>
+                  <p className="text-[16px] text-[#707070] leading-6">
+                    {testimonials[current].text}
+                  </p>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
-          <div className="absolute left-0  shrink-0 w-32.5 h-25 rounded flex items-center justify-center overflow-hidden">
-            <Image src={profile} alt="" />
-          </div>
+
           <button
             onClick={next}
-            className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center shrink-0 transition-colors"
+            className="bg-[#ee3539] absolute 2xl:right-135 lg:right-75 right-29 bottom-20 hover:bg-[#c0392b] w-7 h-7 flex items-center justify-center shrink-0 transition-colors"
           >
-            <MdOutlineArrowForwardIos className="text-white text-[16px]" />
+            <MdOutlineArrowForwardIos className="text-white text-[20px]" />
           </button>
         </div>
 
-        <div className="md:hidden flex flex-col gap-4">
-          <div className="flex items-center justify-between px-2">
-            <div className="w-20 h-20 rounded bg-gray-200 flex items-center justify-center overflow-hidden"></div>
-
-            <div className="flex gap-2">
-              <button
-                onClick={prev}
-                className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center transition-colors"
-              >
-                <MdOutlineArrowBackIos className="text-white text-[16px]" />
-              </button>
-              <button
-                onClick={next}
-                className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center transition-colors"
-              >
-                <MdOutlineArrowForwardIos className="text-white text-[16px]" />
-              </button>
-            </div>
+        {/* Mobile */}
+        <div className="relative md:hidden flex flex-col gap-4 px-5">
+          <div className="absolute right-5 top-[-15px] flex gap-2 z-10">
+            <button
+              onClick={prev}
+              className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center transition-colors"
+            >
+              <MdOutlineArrowBackIos className="text-white text-[16px]" />
+            </button>
+            <button
+              onClick={next}
+              className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center transition-colors"
+            >
+              <MdOutlineArrowForwardIos className="text-white text-[16px]" />
+            </button>
           </div>
 
-          <div className="bg-white rounded-xl p-6 w-full space-y-2">
-            <h6 className="font-bold text-[#404297] text-[16px]">
-              {testimonials[current].name}
-            </h6>
-            <p className="text-[14px] text-gray-700 leading-6">
-              {testimonials[current].text}
-            </p>
+          <div className="bg-white rounded-xl px-6 pt-6 pb-6 w-full overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                className="space-y-4"
+              >
+                <div className="absolute top-[-60px] w-20 h-20 rounded overflow-hidden bg-gray-200">
+                  <Image
+                    src={profile}
+                    alt="profile"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h6 className="font-bold text-[#404297] text-[16px]">
+                  {testimonials[current].name}
+                </h6>
+                <p className="text-[14px] text-gray-700 leading-6">
+                  {testimonials[current].text}
+                </p>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>
