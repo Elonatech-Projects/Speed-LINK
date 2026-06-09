@@ -10,9 +10,8 @@ const Footer = () => {
   return (
     <div className="bg-[#404297]">
       <div className="2xl:py-25 md:py-12.5 2xl:mx-71 py-12.5 xl:px-15 px-5">
-        <div className="container grid grid-cols-2 md:grid-cols-4 xl:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-6 xl:gap-12">
-
-          <div className="md:w-58.5 xl:w-115 2xl:w-130 col-span-2 md:col-span-1 space-y-6">
+        <div className="container grid grid-cols-2 md:grid-cols-[1fr_1.5fr_1fr_1fr] xl:grid-cols-[2fr_1.5fr_1fr_1fr] gap-8 md:gap-4 xl:gap-8">
+          <div className="md:w-58.5 xl:w-115 2xl:w-120 col-span-2 md:col-span-1 space-y-6">
             <div className="md:w-41 xl:w-46.25 w-50.25">
               <Image src={footer} alt="Footer Image" />
             </div>
@@ -35,28 +34,52 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
+<div className="col-span-2 md:hidden">
+  <hr className="border text-[#6466ab] opacity-50" />
+</div>
           <div className="col-span-2  md:pl-10 md:col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">SERVICES</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
               <p className="hover:text-[#ee3539] cursor-pointer">IT Services</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Training & Certification</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Space Rental</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Test Centre Solutions</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Digital Marketing</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Consultancy & Procurement</p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Training & Certification
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Space Rental
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Test Centre Solutions
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Digital Marketing
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer whitespace-none">
+                Consultancy & Procurement
+              </p>
             </div>
           </div>
+
+          <div className="col-span-2 md:hidden">
+  <hr className="border text-[#6466ab] opacity-50" />
+</div>
 
           <div className="col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">PRODUCTS</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
               <p className="hover:text-[#ee3539] cursor-pointer">E-Learning</p>
               <p className="hover:text-[#ee3539] cursor-pointer">DigiSchool</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">SpeedKonnect</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">BlazzingShare</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">SpeedTalentHQ</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">ERP Softwares</p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                SpeedKonnect
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                BlazzingShare
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                SpeedTalentHQ
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                ERP Softwares
+              </p>
             </div>
           </div>
 
@@ -65,13 +88,18 @@ const Footer = () => {
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
               <p className="hover:text-[#ee3539] cursor-pointer">About Us</p>
               <p className="hover:text-[#ee3539] cursor-pointer">Our Team</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Privacy Policy</p>
-              <p className="hover:text-[#ee3539] cursor-pointer">Terms of Service</p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Privacy Policy
+              </p>
+              <p className="hover:text-[#ee3539] cursor-pointer">
+                Terms of Service
+              </p>
             </div>
           </div>
-
         </div>
       </div>
+
+   
 
       <div className="xl:mx-15 2xl:mx-71 mx-5 my-6">
         <hr className="container border text-[#6466ab] opacity-50" />
