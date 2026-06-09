@@ -14,15 +14,14 @@ const clients = [client1, client2, client3, client4, client5, client6, client7];
 
 const slideVariants = {
   enter: { x: 100 },
-  center: { x: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  exit: { x: -300, transition: { duration: 0.4, ease: "easeIn" } },
+  center: { x: 0, transition: { duration: 0.5, ease: "easeOut" as const} },
+  exit: { x: -300, transition: { duration: 0.4, ease: "easeIn" as const} },
 };
 
 const Client = () => {
   const [current, setCurrent] = useState(0);
   const [visible, setVisible] = useState(5);
 
-  // Set visible count based on screen width
   useEffect(() => {
     const update = () => {
       if (window.innerWidth < 768) setVisible(2);
@@ -45,7 +44,9 @@ const Client = () => {
     <div className="bg-[#e6e8ef]">
       <div className="py-25 2xl:mx-71 xl:px-15 px-5">
         <div className="container">
-          <h4 className="font-semibold text-[32px] text-[#404297]">Our Clients</h4>
+          <h4 className="font-semibold text-[32px] text-[#404297]">
+            Our Clients
+          </h4>
           <hr className="border text-[#aeb8fe] mb-5 mt-3" />
 
           <div className="overflow-hidden">
@@ -68,7 +69,7 @@ const Client = () => {
                       <Image
                         src={clients[index]}
                         alt={`Client ${index + 1}`}
-                        className="w-full max-w-[120px]"
+                        className="w-full max-w-30"
                       />
                     </div>
                   );
