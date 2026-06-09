@@ -13,13 +13,26 @@ import client7 from "../../public/images/Foundation-for-Agric-and-social-Transfo
 const clients = [client1, client2, client3, client4, client5, client6, client7];
 
 const slideVariants = {
-  enter: { x: 100},
-  center: { x: 0,  transition: { duration: 0.5, ease: "easeOut" } },
-  exit: { x: -300,  transition: { duration: 0.4, ease: "easeIn" } },
+  enter: { x: 100 },
+  center: { x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  exit: { x: -300, transition: { duration: 0.4, ease: "easeIn" } },
 };
 
 const Client = () => {
   const [current, setCurrent] = useState(0);
+  const [visible, setVisible] = useState(5);
+
+  // Set visible count based on screen width
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < 768) setVisible(2);
+      else if (window.innerWidth < 1280) setVisible(4);
+      else setVisible(5);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -45,17 +58,17 @@ const Client = () => {
                 exit="exit"
                 className="flex gap-5 items-center justify-center"
               >
-                {[0, 1, 2, 3, 4].map((offset) => {
+                {Array.from({ length: visible }).map((_, offset) => {
                   const index = (current + offset) % clients.length;
                   return (
                     <div
                       key={offset}
-                      className="bg-white rounded-lg p-4 flex items-center justify-center"
+                      className="bg-white rounded-lg p-4 flex items-center justify-center flex-1"
                     >
                       <Image
                         src={clients[index]}
                         alt={`Client ${index + 1}`}
-                        className="w-55"
+                        className="w-full max-w-[120px]"
                       />
                     </div>
                   );

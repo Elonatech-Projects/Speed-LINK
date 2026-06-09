@@ -64,7 +64,7 @@ const NavBar = () => {
         }`}
       >
         <div className="flex justify-between items-center p-5 border-b">
-          <Image src={logo} alt="Logo" className="w-40 h-14" />
+          <Image src={logo} alt="Logo" className="w-40 h-15" />
           <IoClose
             className="text-2xl text-[#47489b] cursor-pointer"
             onClick={() => setMenuOpen(false)}

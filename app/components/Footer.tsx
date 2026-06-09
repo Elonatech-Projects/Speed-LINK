@@ -12,12 +12,11 @@ const Footer = () => {
       <div className="2xl:py-25 md:py-12.5 2xl:mx-71 py-12.5 xl:px-15 px-5">
         <div className="container grid grid-cols-2 md:grid-cols-4 xl:grid-cols-[2fr_1fr_1fr_1fr] gap-8 md:gap-6 xl:gap-12">
 
-          {/* Logo + desc + socials — full width on mobile */}
-          <div className="col-span-2 md:col-span-1 space-y-6">
-            <div className="md:w-48 xl:w-64 w-59.5">
+          <div className="md:w-58.5 xl:w-115 2xl:w-130 col-span-2 md:col-span-1 space-y-6">
+            <div className="md:w-41 xl:w-46.25 w-50.25">
               <Image src={footer} alt="Footer Image" />
             </div>
-            <p className="text-[15px] text-[#ffffffa0]">
+            <p className="xl:pe-37.5 pe-20 text-[15px] text-[#ffffffa0]">
               A team of IT experts, providing comprehensive information
               technology solutions that make businesses stand out.
             </p>
@@ -37,8 +36,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Services — full width on mobile */}
-          <div className="col-span-2 md:col-span-1 space-y-5">
+          <div className="col-span-2  md:pl-8 md:col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">SERVICES</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
               <p className="hover:text-[#ee3539] cursor-pointer">IT Services</p>
@@ -50,7 +48,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Products — half width on mobile, 1 col on md+ */}
           <div className="col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">PRODUCTS</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
@@ -63,7 +60,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company — half width on mobile, 1 col on md+ */}
           <div className="col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">COMPANY</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
