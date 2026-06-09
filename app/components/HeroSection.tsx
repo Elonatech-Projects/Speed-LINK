@@ -16,7 +16,7 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6, ease: "easeOut" as const},
   },
 };
 
@@ -64,7 +64,6 @@ const HeroSection = () => {
 
           {/* Button */}
           <button
-            variants={fadeUp}
             className="bg-[#ec4145] mt-6 text-white hover:bg-[#5759a9] py-5 px-15 text-[16px] font-medium rounded-full"
           >
             Our Solutions

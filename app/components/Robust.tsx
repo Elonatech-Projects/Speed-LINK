@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 
 const fromLeft = {
   hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
 const fromRight = {
   hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
 const fromBottomRight = {
   hidden: { opacity: 0, x: 40, y: 40 },
-  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.7, ease: "easeOut" as const} },
 };
 
 const Robust = () => {

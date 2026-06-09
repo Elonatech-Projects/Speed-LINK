@@ -22,8 +22,8 @@ const testimonials = [
 
 const slideVariants = {
   enter: { x: 100, opacity: 0 },
-  center: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } },
-  exit: { x: -100, opacity: 0, transition: { duration: 0.4, ease: "easeIn" } },
+  center: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" as const} },
+  exit: { x: -100, opacity: 0, transition: { duration: 0.4, ease: "easeIn" as const } },
 };
 
 const Testimonials = () => {
@@ -94,7 +94,7 @@ const Testimonials = () => {
 
         {/* Mobile */}
         <div className="relative md:hidden flex flex-col gap-4 px-5">
-          <div className="absolute right-5 top-[-15px] flex gap-2 z-10">
+          <div className="absolute right-5 -top-3.75 flex gap-2 z-10">
             <button
               onClick={prev}
               className="bg-[#ee3539] hover:bg-[#c0392b] w-10 h-10 rounded flex items-center justify-center transition-colors"
