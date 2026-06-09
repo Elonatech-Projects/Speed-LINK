@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="md:w-41 xl:w-46.25 w-50.25">
               <Image src={footer} alt="Footer Image" />
             </div>
-            <p className="xl:pe-37.5 pe-20 text-[15px] text-[#ffffffa0]">
+            <p className="xl:pe-37.5 pe-20 md:pe-0 text-[15px] text-[#ffffffa0]">
               A team of IT experts, providing comprehensive information
               technology solutions that make businesses stand out.
             </p>
@@ -36,7 +36,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-span-2  md:pl-8 md:col-span-1 space-y-5">
+          <div className="col-span-2  md:pl-10 md:col-span-1 space-y-5">
             <h5 className="text-[14px] font-bold text-white">SERVICES</h5>
             <div className="space-y-3 text-[15px] text-[#ffffffa0] font-normal">
               <p className="hover:text-[#ee3539] cursor-pointer">IT Services</p>

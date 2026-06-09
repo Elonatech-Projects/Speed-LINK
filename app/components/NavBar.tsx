@@ -64,33 +64,34 @@ const NavBar = () => {
         }`}
       >
         <div className="flex justify-between items-center p-5 border-b">
-          <Image src={logo} alt="Logo" className="w-40 h-15" />
-          <IoClose
+<div className="w-40 h-15 md:w-56 md:h-20 relative">
+  <Image src={logo} alt="Logo" fill className="object-contain" />
+</div>          <IoClose
             className="text-2xl text-[#47489b] cursor-pointer"
             onClick={() => setMenuOpen(false)}
           />
         </div>
 
-        <div className="flex flex-col gap-2 p-4 text-[#707070] text-[15px]">
+        <div className="flex flex-col gap-2 p-4 text-[#707070] text-[16px]">
           <Link
             href="/"
-            className="bg-[#f5f5f5] px-4 py-3 rounded hover:text-[#ee3539]"
+            className="bg-[#e6e8ef] px-4 py-3 rounded hover:text-[#ee3539]"
             onClick={() => setMenuOpen(false)}
           >
             About
           </Link>
 
-          <button className="bg-[#f5f5f5] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
+          <button className="bg-[#e6e8ef] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
             Products <span className="text-[12px]">&#9654;</span>
           </button>
 
-          <button className="bg-[#f5f5f5] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
+          <button className="bg-[#e6e8ef] px-4 py-3 rounded flex items-center justify-between w-full hover:text-[#ee3539]">
             Services <span className="text-[12px]">&#9654;</span>
           </button>
 
           <Link
             href="/"
-            className="bg-[#f5f5f5] px-4 py-3 rounded hover:text-[#ee3539]"
+            className="bg-[#e6e8ef] px-4 py-3 rounded hover:text-[#ee3539]"
             onClick={() => setMenuOpen(false)}
           >
             Case Studies
@@ -98,7 +99,7 @@ const NavBar = () => {
 
           <Link
             href="/"
-            className="bg-[#f5f5f5] px-4 py-3 rounded hover:text-[#ee3539]"
+            className="bg-[#e6e8ef] px-4 py-3 rounded hover:text-[#ee3539]"
             onClick={() => setMenuOpen(false)}
           >
             Insights

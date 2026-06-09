@@ -46,15 +46,15 @@ const Testimonials = () => {
           Testimonials
         </h5>
 
-        <div className="relative hidden md:flex items-center justify-center gap-4">
+        <div className="relative hidden md:flex items-center justify-center">
           <button
             onClick={prev}
-            className="bg-[#ee3539] absolute  2xl:left-135 left-29 lg:left-75 bottom-20 z-10 hover:bg-[#c0392b] w-7 h-7 flex items-center justify-center shrink-0 transition-colors"
+            className="bg-[#ee3539] absolute 2xl:left-135 md:left-20.5  md:bottom-14 2xl:bottom-12 z-10 xl:left-75 xl:bottom-10 hover:bg-[#c0392b] w-7 h-7 flex items-center justify-center shrink-0 transition-colors"
           >
             <MdOutlineArrowBackIos className="text-white text-[16px]" />
           </button>
 
-          <div className="relative bg-white rounded-md py-7.5 pr-7.5 pl-17.5 max-w-173.5 w-full overflow-hidden">
+          <div className="bg-white rounded-md py-7.5 md:pl-15 md:pr-7 pl-5 max-w-173.5 w-full mx-12">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -62,16 +62,17 @@ const Testimonials = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="flex gap-5 items-center"
+                className="relative flex gap-5 items-center"
               >
-                <div className="absolute xl:left-75 2xl:-left-10  bottom-40 left-30 shrink-0 w-32 h-24 rounded overflow-hidden bg-red-200 z-999">
-                  {/* <Image
+                <div className="shrink-0 -ml-16 w-32 h-28 rounded overflow-hidden bg-gray-200 top-2 2xl:right-160  xl:right-160 md:right-155 absolute">
+                  <Image
                     src={profile}
                     alt="profile"
                     className="w-full h-full object-cover"
-                  /> */}
+                  />
                 </div>
-                <div className="space-y-2">
+
+                <div className="overflow-hidden space-y-2">
                   <h6 className="font-semibold text-[#404297] text-[18px]">
                     {testimonials[current].name}
                   </h6>
@@ -85,7 +86,7 @@ const Testimonials = () => {
 
           <button
             onClick={next}
-            className="bg-[#ee3539] absolute 2xl:right-135 lg:right-75 right-29 bottom-20 hover:bg-[#c0392b] w-7 h-7 flex items-center justify-center shrink-0 transition-colors"
+            className="bg-[#ee3539]  hover:bg-[#c0392b] w-7 h-7 absolute 2xl:right-135 md:right-20.5  md:bottom-14 2xl:bottom-12 xl:right-75 xl:bottom-10 flex items-center justify-center shrink-0 transition-colors"
           >
             <MdOutlineArrowForwardIos className="text-white text-[20px]" />
           </button>
@@ -107,8 +108,7 @@ const Testimonials = () => {
               <MdOutlineArrowForwardIos className="text-white text-[16px]" />
             </button>
           </div>
-
-          <div className="bg-white rounded-xl px-6 pt-6 pb-6 w-full overflow-hidden">
+          <div className="bg-white rounded-xl px-6 pb-6 w-full">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -118,7 +118,7 @@ const Testimonials = () => {
                 exit="exit"
                 className="space-y-4"
               >
-                <div className="absolute top-[-60px] w-20 h-20 rounded overflow-hidden bg-gray-200">
+                <div className="-mt-10 w-20 h-20 rounded overflow-hidden bg-gray-200">
                   <Image
                     src={profile}
                     alt="profile"
@@ -134,6 +134,8 @@ const Testimonials = () => {
               </motion.div>
             </AnimatePresence>
           </div>
+
+          {/*  */}
         </div>
       </div>
     </div>
